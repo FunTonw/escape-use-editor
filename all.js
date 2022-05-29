@@ -5,7 +5,7 @@
 // var editor1 = new RichTextEditor("#description", editorconfi);
 
 // Quill.register('modules/imageUploader', ImageUploader);
-let url = 'https://images.unsplash.com/photo-1486427944299-d1955d23e34d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80';
+Quill.register('modules/imageUploader', ImageUploader);
 var quill = new Quill("#quilledit", {
   theme: "snow",
   modules: {
@@ -24,7 +24,7 @@ var quill = new Quill("#quilledit", {
     //   },
     },
     imageUploader: {
-        upload: () => {
+        upload: file => {
           return new Promise((resolve, reject) => {
             setTimeout(() => {
                 resolve(
